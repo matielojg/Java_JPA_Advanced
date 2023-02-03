@@ -21,3 +21,12 @@ Aplicativo Loja em JAVA e JPA
 -	A história de criação do Hibernate e da JPA;
 -	Como criar uma aplicação Maven e adicionar o Hibernate como dependência.
 ```
+
+### Módulo 2 - Configurações e EntityManager
+
+```
+-	Configurado a JPA via arquivo persistence.xml;
+-	Mapeei entidades JPA;
+-	Utilizei o EntityManager para persistir entidades no banco de dados
+```
+
