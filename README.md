@@ -29,4 +29,19 @@ Aplicativo Loja em JAVA e JPA
 -	Mapeei entidades JPA;
 -	Utilizei o EntityManager para persistir entidades no banco de dados
 ```
+### Módulo 3 - Mapeando Entidades
 
+```
+-	Como escrever uma classe DAO utilizando a JPA;
+-	Como mapear atributos do tipo Enum em uma entidade;
+-	Como mapear um relacionamento entre entidades.
+```
+### Módulo 4 - Ciclo de Vida de uma Entidade
+
+```
+-	Como funciona o ciclo de vida de entidades JPA;
+-	As transições de estados de uma entidade ao ser persistida;
+-	As transições de estados de uma entidade ao ser atualizada;
+-	As transições de estados de uma entidade ao ser removida.
+```
+<img src=""> </img>
