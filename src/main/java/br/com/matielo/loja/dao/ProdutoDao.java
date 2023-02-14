@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.matielo.loja.modelo.Categoria;
 import br.com.matielo.loja.modelo.Produto;
 
 public class ProdutoDao {
@@ -24,6 +25,11 @@ public class ProdutoDao {
 		this.em.remove(produto);
 	}
 
+	public void remover(Produto produto) {
+		produto = em.merge(produto); // devolve o objeto em Managed
+		this.em.remove(produto); // remove do banco
+	}
+
 	public Produto buscarPorId(Long id) {
 		return em.find(Produto.class, id);
 	}
@@ -39,7 +45,7 @@ public class ProdutoDao {
 	}
 
 	/**
-	 * Consulta com jpql com JOIN de tabelas
+	 * Consulta com jpql com JOIN de tabelas em 'p.categoria.nome'
 	 * 
 	 * @param nome
 	 * @return
