@@ -25,10 +25,10 @@ public class Produto {
 	private Categoria categoria;
 
 	public Produto() {
-		super();
+		//exigência da JPA para quando ocorrer o update do objeto, precisa desse construtor para ocorrer 
 	}
 
-	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {		
+	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;
