@@ -1,34 +1,43 @@
 package br.com.matielo.loja.testes;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
+import br.com.matielo.loja.dao.CategoriaDao;
+import br.com.matielo.loja.dao.ProdutoDao;
 import br.com.matielo.loja.modelo.Categoria;
+import br.com.matielo.loja.modelo.Produto;
 import br.com.matielo.loja.util.JPAUtil;
 
 public class CadastroDeProduto {
 
 	public static void main(String[] args) {
-
-		Categoria celulares = new Categoria("CELULARES");
+		cadastrarProduto();
 		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDao produtoDao = new ProdutoDao(em);
+		Produto p = produtoDao.buscarPorId(1l);
+		System.out.println(p.getPreco());
 
-		em.getTransaction().begin();
-		em.persist(celulares);
-
-		celulares.setNome("XPTO");
-		System.out.println(celulares.getNome().toString());
-
-		em.flush();
-		em.clear(); //deixa detached
-
-		celulares = em.merge(celulares); // necessário utilizar o merge() para voltar ao estado managed e reatribuir ao
-											// mesmo objeto, senao cria outra referência
-		celulares.setNome("1234");
-		System.out.println(celulares.getNome().toString());
-		
-		em.flush();
-		em.remove(celulares);
-		em.flush();
+		List<Produto> todos = produtoDao.buscarTodos();
+		todos.forEach(p2 -> System.out.println(p.getNome()));
 	}
 
+	public static void cadastrarProduto() {
+		Categoria celulares = new Categoria("CELULARES");
+		Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"), celulares);
+
+		EntityManager em = JPAUtil.getEntityManager();
+		ProdutoDao produtoDao = new ProdutoDao(em);
+		CategoriaDao categoriaDao = new CategoriaDao(em);
+
+		em.getTransaction().begin();
+
+		categoriaDao.cadastrar(celulares);
+		produtoDao.cadastrar(celular);
+
+		em.getTransaction().commit();
+		em.close();
+	}
 }
