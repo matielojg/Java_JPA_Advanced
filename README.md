@@ -1,4 +1,7 @@
-[Curso Alura: Persistência com JPA: Hibernate](https://cursos.alura.com.br/course/persistencia-jpa-introducao-hibernate)
+Enjoy the code. The coffee is on us :coffee:
+
+Módulo I - [Persistência com JPA: Hibernate](https://cursos.alura.com.br/course/persistencia-jpa-introducao-hibernate)</br>
+[Módulo II](#modulo-2) - [Java e JPA: consultas avançadas, performance e modelos complexos](https://cursos.alura.com.br/course/java-jpa-consultas-avancadas-performance-modelos-complexos)</br>
 
 - [x] Entender os problemas do JDBC e como a JPA veio para resolvê-los
 - [x] Aprender a adicionar a JPA em uma aplicação Java com Maven
@@ -38,3 +41,19 @@ SubMódulo 5 - Consultas com JPQL
 >-	Como realizar consultas JPQL;
 >-	Como filtrar dados em consultas JPQL;
 >-	Como retornar apenas parte de uma entidade em uma consulta JPQL.
+
+----
+
+### Modulo 2 
+
+[Java e JPA: consultas avançadas, performance e modelos complexos](https://cursos.alura.com.br/course/java-jpa-consultas-avancadas-performance-modelos-complexos)</br>
+
+<strong>Checklist do módulo II:</strong></br>
+- [ ] 	Saiba como modelar corretamente relacionamentos bidirecionais
+- [ ] 	Aprenda a utilizar o recurso de select new para realizar consultas avançadas
+- [ ] 	Entenda a diferença entre relacionamentos EAGER e LAZY
+- [ ] 	Conheça o recurso de join fetch para planejar queries
+- [ ] 	Conheça a API de Criteria da JPA
+- [ ] 	Saiba como mapear entidades que utilizam herança e chave composta
+
+----
