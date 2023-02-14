@@ -1,0 +1,7 @@
+Relacionamentos bidirecionais - https://cursos.alura.com.br/course/java-jpa-consultas-avancadas-performance-modelos-complexos/task/89331
+
+Outra dica, agora de boas práticas. Eu, particularmente, sempre prefiro, quando tem um relacionamento por uma lista, já inicializar a lista aqui na declaração do atributo.
+
+[03:58] Aqui já colocar private List<ItemPedido> itens = new ArrayList<>(); para inicializar essa lista como uma lista vazia, 
+porque senão teremos que sempre ficar fazendo aquele if, if lista foi instanciada? Se a lista é nula, dá new na lista; if a lista é nula, dá new na lista. 
+Então teríamos que fazer isso o tempo inteiro. Para evitar essa checagem, já inicializamos aqui a coleção.
