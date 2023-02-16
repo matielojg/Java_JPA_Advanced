@@ -1,6 +1,7 @@
 package br.com.matielo.loja.testes;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -36,16 +37,25 @@ public class CadastroDePedido {
 		PedidoDao pedidoDao = new PedidoDao(em);
 		pedidoDao.cadastrar(pedido);
 
-		
 		em.getTransaction().commit();
 
 		BigDecimal totalVendido = pedidoDao.valorTotalVendido();
 		System.out.println("VALOR TOTAL: " + totalVendido);
+
+		List<Object[]> relatorio = pedidoDao.relatorioVendas();
+		for (Object[] obj : relatorio) {
+			System.out.println(obj[0]);
+			System.out.println(obj[1]);
+			System.out.println(obj[2]);
+		}
+
 	}
 
 	public static void popularBancoDeDados() {
 		Categoria celulares = new Categoria("CELULARES");
 		Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"), celulares);
+//		Produto celular1 = new Produto("Motorola", "X11", new BigDecimal("1100"), celulares);
+//		Produto celular2 = new Produto("IPHONE", "6S", new BigDecimal("1200"), celulares);
 		Cliente cliente = new Cliente("Rodrigo", "123456");
 
 		EntityManager em = JPAUtil.getEntityManager();
@@ -56,6 +66,8 @@ public class CadastroDePedido {
 
 		categoriaDao.cadastrar(celulares);
 		produtoDao.cadastrar(celular);
+//		produtoDao.cadastrar(celular1);
+//		produtoDao.cadastrar(celular2);
 		clienteDao.cadastrar(cliente);
 
 		em.getTransaction().commit();
