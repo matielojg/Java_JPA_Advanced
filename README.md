@@ -49,11 +49,23 @@ SubMódulo 5 - Consultas com JPQL
 [Java e JPA: consultas avançadas, performance e modelos complexos](https://cursos.alura.com.br/course/java-jpa-consultas-avancadas-performance-modelos-complexos)</br>
 
 <strong>Checklist do módulo II:</strong></br>
-- [ ] 	Saiba como modelar corretamente relacionamentos bidirecionais
+- [x] 	Saiba como modelar corretamente relacionamentos bidirecionais
 - [ ] 	Aprenda a utilizar o recurso de select new para realizar consultas avançadas
 - [ ] 	Entenda a diferença entre relacionamentos EAGER e LAZY
 - [ ] 	Conheça o recurso de join fetch para planejar queries
 - [ ] 	Conheça a API de Criteria da JPA
 - [ ] 	Saiba como mapear entidades que utilizam herança e chave composta
+
+SubMódulo 1 - Tipos de Mapeamento
+>-	Mapeamento de novas entidades na aplicação conforme a modelagem do banco de dados;
+>-	Mapeamento de um relacionamento com cardinalidade muitos-para-muitos;
+>-	Mapeamento um relacionamento bidirecional;
+>-	Persistência de entidades que possuam relacionamentos bidirecionais.
+
+SubMódulo 2 - Consultas avançadas
+>-	Fiz consultas utilizando funções de agregação, tais como min, max, avg e sum;
+>-	Fiz consultas de relatórios utilizando JPQL;
+>-	Utilizei o recurso select new em consultas JPQL;
+>-	Realizei consultas utilizando named queries.
 
 ----
