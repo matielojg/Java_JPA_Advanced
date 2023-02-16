@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.matielo.loja.modelo.Pedido;
+import br.com.matielo.loja.vo.RelatorioDeVendasVo;
 
 public class PedidoDao {
 
@@ -24,16 +25,17 @@ public class PedidoDao {
 		return em.createQuery(jpql, BigDecimal.class).getSingleResult();
 	}
 
-	public List<Object[]> relatorioVendas() {
-		String jpql = "SELECT produto.nome, "				
+	public List<RelatorioDeVendasVo> relatorioVendas() {
+		String jpql = "SELECT new br.com.matielo.loja.vo.RelatorioDeVendasVo( "
+				+ "produto.nome, "
 				+ "SUM(item.quantidade), "
-				+ "MAX(pedido.data) "
+				+ "MAX(pedido.data)) "
 				+ "FROM Pedido pedido "
 				+ "JOIN pedido.itens item "
 				+ "JOIN item.produto produto "
-				+ "GROUP BY produto.nome "
+				+ "GROUP BY produto.nome , item.quantidade "
 				+ "ORDER BY item.quantidade DESC ";
-		return em.createQuery(jpql, Object[].class)
+		return em.createQuery(jpql, RelatorioDeVendasVo.class)
 				.getResultList();
 	}
 	
