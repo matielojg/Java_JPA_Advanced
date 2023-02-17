@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,22 +21,22 @@ public class ItemPedido {
 	private BigDecimal precoUnitario;
 	private int quantidade;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Pedido pedido;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Produto produto;
 
 	public ItemPedido() {
 		// exigência da JPA para quando ocorrer o update do objeto, precisa desse
 		// construtor padrão para ocorrer
 	}
-	
+
 	public ItemPedido(int quantidade, Pedido pedido, Produto produto) {
 		this.quantidade = quantidade;
 		this.pedido = pedido;
 		this.precoUnitario = produto.getPreco();
-		this.produto = produto;		
+		this.produto = produto;
 	}
 
 	public Long getId() {
